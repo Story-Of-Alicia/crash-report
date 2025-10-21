@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(reporter VERSION 1.0.0 LANGUAGES CXX)
+project(crash_report VERSION 1.0.0 LANGUAGES CXX)
 
 add_subdirectory(lib/zlib)
 
@@ -13,14 +13,14 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 qt_standard_project_setup()
 
-qt_add_executable(reporter
+qt_add_executable(crash_report
         src/main.ui
         src/main.cpp
 )
 
-target_link_libraries(reporter PRIVATE Qt6::Widgets zlib)
+target_link_libraries(crash_report PRIVATE Qt6::Widgets zlib)
 
-set_target_properties(reporter PROPERTIES
+set_target_properties(crash_report PROPERTIES
         WIN32_EXECUTABLE ON
         MACOSX_BUNDLE ON
 )
